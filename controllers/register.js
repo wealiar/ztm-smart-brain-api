@@ -1,11 +1,9 @@
 const handleRegister = (req, res, db, bcrypt) => {
     const { name, email, password } = req.body;
 
-    // bcrypt.hash(password, saltRounds, function (err, hash) {
-    //     // Store hash in your password DB.
-    //     console.log('hash', hash);
-    //     hashedPass = hash;
-    // });
+    if(!email || !name || !password) {
+        return res.status(400).json('incorrect form submission');
+    }
 
     // synchronous hashing for example
     const saltRounds = 10;
@@ -40,5 +38,5 @@ const handleRegister = (req, res, db, bcrypt) => {
 
 
 module.exports = {
-    handleRegister: this.handleRegister
+    handleRegister
 }
