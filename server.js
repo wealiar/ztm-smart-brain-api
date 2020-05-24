@@ -23,13 +23,14 @@ app.use(express.json());
 app.use(cors());
 
 
-app.get('/', (req, res) => {
-    db.select().from('users').returning('*')
-        .then(users => {
-            res.json(users);
-        })
-        .catch(err => res.status(400).json('unable to get users'));
-});
+app.get('/', (req, res) => { res.send('it is working!')});
+// app.get('/', (req, res) => {
+//     db.select().from('users').returning('*')
+//         .then(users => {
+//             res.json(users);
+//         })
+//         .catch(err => res.status(400).json('unable to get users'));
+// });
 
 app.post('/signin', signin.handleSignin(db, bcrypt));
 app.post('/register', (req, res) => register.handleRegister(req, res, db, bcrypt));
