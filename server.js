@@ -12,11 +12,9 @@ const image = require('./controllers/image');
 const db = knex({
     client: 'pg',
     connection: {
-        host: 'postgresql-aerodynamic-26152',
-        user: 'postgres',
-        password: 'psql',
-        database: 'smart-brain'
-    }
+        host: process.env.DATABASE_URL,
+        ssl:true
+        }
 });
 
 app.use(express.json());
