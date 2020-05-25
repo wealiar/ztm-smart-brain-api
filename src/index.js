@@ -1,1 +1,0 @@
-const testFunc = () => {console.log('Hello world!')};

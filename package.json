@@ -18,10 +18,11 @@
     "pg": "^7.18.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "server": "^1.0.27"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "serve -s build",
     "start:dev": "nodemon server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
